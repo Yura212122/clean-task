@@ -1,0 +1,56 @@
+body{
+    background: #2c2c2c;
+}
+
+div{
+    margin: 5px;
+}
+
+.cert{
+    display: block;
+    margin-bottom: 10px;
+    border: 2px solid black;
+    width: fit-content;
+    padding: 5px;
+    color: white;
+    margin-left: 0px;
+}
+
+.save-button {
+  display: inline-block;
+  padding: 3px 15px;
+  background-color: #4bde5f;
+  color: black;
+  text-align: center;
+  font-size: 16px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.clear-button {
+  display: inline-block;
+  padding: 3px 15px;
+  background-color: #bf4b4b;
+  color: black;
+  text-align: center;
+  font-size: 16px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.select-button {
+  display: inline-block;
+  padding: 3px 15px;
+  background-color: grey;
+  color: black;
+  text-align: center;
+  font-size: 16px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: bold;
+}

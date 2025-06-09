@@ -1,0 +1,70 @@
+.course-lessons-block {
+    background-color: white;
+    padding-top: 56px;
+}
+
+.course-lessons-block-main-img {
+    width: 30px;
+}
+
+.course-lesson-block-main {
+    width: 253px !important;
+    background-color: #f5f6f7 !important;
+    border-radius: 15px !important;
+    border-color: #84D4EC !important;
+}
+
+.course-lesson-block-h4 {
+    margin-bottom: 150px !important;
+}
+
+.course-lesson-block-part {
+    bottom: 40px;
+    left: 24px;
+}
+
+.course-lesson-block-clock {
+    margin-right: 25px;
+}
+
+.course-lesson-block-img {
+    margin-right: 3px;
+    margin-top: 6px;
+}
+
+.course-lesson-block-card {
+    margin-bottom: 45px !important;
+}
+
+.course-lesson-block-button {
+    height: 32px !important;
+    border-radius: 8px !important;
+    bottom: 20px;
+}
+
+.course-lesson-block-button-text {
+    width: 128px;
+}
+
+@media (max-width: 431px) {
+    .course-lessons-block {
+        margin-top: 50px !important;
+    }
+
+    .course-name-block {
+        padding-top: 10px;
+        margin-left: -20px;
+    }
+
+}
+
+@media (max-width: 345px) {
+    .course-lessons-block {
+        margin-top: 50px !important;
+    }
+
+    .course-name-block {
+        padding-top: 10px;
+        margin-left: -20px;
+    }
+}

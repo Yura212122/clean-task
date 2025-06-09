@@ -1,0 +1,42 @@
+input[type="text"]::-webkit-input-placeholder {
+    color: #949494 !important;
+}
+
+button[type="submit"]:hover {
+    background-color: #068BBE !important;
+    border-color: #068BBE !important;
+    color: #E1F5FA !important;
+}
+
+.certificate-number {
+    font-size: 1.6rem;
+}
+
+.certificate-name {
+    font-size: 1.6rem;
+    margin: 0 2rem;
+}
+
+.button-width {
+    width: 194px;
+}
+
+@media (max-width: 767px) {
+    .form-certificate {
+        padding-top: 50px !important;
+    }
+
+    .certificate-number {
+        font-size: 1.1rem;
+    }
+
+    .certificate-name {
+        font-size: 1.1rem;
+        margin: 0 1rem;
+    }
+
+    .button-width {
+        width: 160px;
+    }
+
+}

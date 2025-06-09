@@ -1,0 +1,21 @@
+button {
+    box-shadow: none;
+}
+
+.activePage {
+    width: 20px;
+    height: 20px;
+    background-color: #84D4EC;
+    margin: 5px;
+    border: 1px solid #84D4EC;
+    border-radius: 12px;
+}
+
+.noActivePage {
+    width: 20px;
+    height: 20px;
+    background-color: #D9D9D9;
+    margin: 5px;
+    border: 1px solid #D9D9D9;
+    border-radius: 12px;
+}

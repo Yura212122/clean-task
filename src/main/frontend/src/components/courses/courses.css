@@ -1,0 +1,138 @@
+.modal-window-not-logged-in {
+    background-color: white;
+    padding: 20px 60px;
+    border-radius: 8px;
+    z-index: 1001;
+
+}
+
+.modal-window-not-logged-in-btn {
+    width: 140px;
+    height: 32px;
+    border-radius: 8px;
+    bottom: 20px;
+}
+
+.course-block {
+    width: 22rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(173, 216, 230, 0.7);
+}
+
+.course-block-figcaption {
+    top: 65px;
+    font-weight: 900;
+    width: 250px;
+    opacity: 100%;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    text-align: center;
+}
+
+.course-block-link {
+    height: 32px;
+    border-radius: 8px;
+    right: 0;
+    bottom: 0;
+}
+
+.course-block-btn {
+    width: 125px;
+    height: 32px;
+    margin-right: 12px;
+    border-radius: 8px;
+}
+
+.course-block-btn-full {
+    width: 165px;
+    height: 32px;
+    border-radius: 8px;
+}
+
+.course-block-btn-dashed {
+    width: 165px;
+    height: 32px;
+    color: grey;
+    background-color: white;
+    border-radius: 8px;
+}
+
+progress {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: #F5F5F5 !important;
+    color: #057649 !important;
+    border: 0;
+    border-radius: 8px;
+}
+
+/* value progress */
+progress::-moz-progress-bar {
+    background: #057649 !important;
+    border: 0;
+    border-radius: 8px;
+}
+
+progress::-webkit-progress-value {
+    background: #057649 !important;
+    border: 0;
+    border-radius: 8px;
+}
+
+/* background progress */
+progress::-webkit-progress-bar {
+    background-color: #F5F5F5 !important;
+    width: 100% !important;
+    border: 0;
+    border-radius: 8px;
+}
+
+.stretched-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.course-name {
+    min-height: 50px;
+}
+
+@media (min-width: 791px) {
+    .margin-btn {
+        margin-bottom: -85px !important;
+    }
+
+    .margin-text-only-admin {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 791px) {
+    .margin-text {
+        margin-bottom: 40px;
+    }
+}
+
+@media (max-width: 361px) {
+    .course-block-btn-full {
+        width: 135px;
+    }
+
+    .course-block-btn-dashed {
+        width: 135px;
+    }
+
+    .img-hidden {
+        display: none;
+    }
+
+    progress {
+        margin-right: -12px !important;
+    }
+}

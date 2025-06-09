@@ -1,0 +1,18 @@
+button[type="button"]:hover {
+    background-color: #068BBE !important;
+    border-color: #068BBE !important;
+    color: #E1F5FA !important;
+}
+
+.btn-success-reg {
+    width: 140px;
+    height: 32px;
+    border-radius: 8px !important;
+    bottom: 20px;
+}
+
+.btn-telegram {
+    width: 194px;
+    height: 32px;
+    border-radius: 8px !important;
+}

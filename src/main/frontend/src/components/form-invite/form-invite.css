@@ -1,0 +1,9 @@
+input[type="text"]::-webkit-input-placeholder {
+    color: #949494 !important;
+}
+
+button[type="submit"]:hover {
+    background-color: #068BBE !important;
+    border-color: #068BBE !important;
+    color: #E1F5FA !important;
+}

@@ -1,0 +1,103 @@
+.btn-home:hover {
+    background-color: #e8e8ed !important;
+    border-color: #e8e8ed !important;
+    color: black !important;
+}
+
+.btn-home:active {
+    background-color: #d2d2d4 !important;
+    border-color: #d2d2d4 !important;
+    color: black !important;
+}
+
+.block-imgs {
+    display: flex;
+}
+
+.home-block {
+    font-size: 25px;
+    font-weight: 900;
+}
+
+.card-welcome-login {
+    width: 328px;
+    height: 350px !important;
+    margin-right: 40px;
+    border: none !important;
+    border-radius: 20px !important;
+    background-color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.card-welcome-img {
+    width: 85%;
+    margin-left: 27px;
+}
+
+.card-welcome-btn {
+    width: 125px;
+    height: 32px;
+    margin-right: 12px;
+    border-radius: 8px !important;
+    bottom: 30px;
+    left: 100px;
+}
+
+.card-welcome-reg {
+    width: 328px;
+    height: 350px !important;
+    margin-left: 40px;
+    border: none !important;
+    border-radius: 20px !important;
+    background-color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.card-welcome-img-reg {
+    width: 110%;
+    margin-left: -15px;
+}
+
+@media (max-width: 575.2px) {
+    .card-welcome-login {
+        border: 1px solid #c6c6c6 !important;
+    }
+
+    .card-welcome-reg {
+        border: 1px solid #c6c6c6 !important;
+    }
+
+    .btn-home {
+        border-color: black !important;
+    }
+
+    .btn-home:hover {
+        border-color: #e8e8ed !important;
+    }
+}
+
+@media (max-width: 776px) {
+    .block-imgs {
+        display: block;
+    }
+
+    .card-welcome-login {
+        width: 328px !important;
+        height: 350px !important;
+        border-radius: 20px !important;
+        background-color: rgba(255, 255, 255, 0.7) !important;
+        margin: 0 auto !important;
+        margin-bottom: 30px !important;
+    }
+
+    .card-welcome-reg {
+        width: 328px !important;
+        height: 350px !important;
+        border-radius: 20px !important;
+        background-color: rgba(255, 255, 255, 0.7) !important;
+        margin: 0 auto !important;
+        margin-bottom: 30px !important;
+    }
+
+    .text-border {
+        margin-top: 100px;
+    }
+}

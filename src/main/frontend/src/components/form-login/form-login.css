@@ -1,0 +1,17 @@
+.form-login-blocked {
+    width: 80px !important;
+    height: 32px !important;
+    border-radius: 8px !important;
+    bottom: 20px !important;
+}
+
+input[type="email"]::-webkit-input-placeholder,
+input[type="password"]::-webkit-input-placeholder {
+    color: #949494 !important;
+}
+
+button[type="submit"]:hover {
+    background-color: #068BBE !important;
+    border-color: #068BBE !important;
+    color: #E1F5FA !important;
+}

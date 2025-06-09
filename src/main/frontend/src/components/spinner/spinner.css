@@ -1,0 +1,16 @@
+#spinner {
+    animation: animate 2s linear infinite;
+    background: url('../../images/loading-circle.svg') no-repeat;
+    height: 200px;
+    width: 200px;
+}
+
+@keyframes animate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}

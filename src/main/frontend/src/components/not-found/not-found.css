@@ -1,0 +1,19 @@
+.not-found-btn {
+    width: 194px;
+    height: 32px;
+    border-radius: 8px !important;
+}
+
+button[type="button"]:hover {
+    background-color: #068BBE !important;
+    border-color: #068BBE !important;
+    color: #E1F5FA !important;
+}
+
+@media (max-width: 768px){
+    .not-found-block {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

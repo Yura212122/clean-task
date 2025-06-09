@@ -1,0 +1,226 @@
+.arrow-back {
+    padding-right: 35px;
+    padding-bottom: 7px;
+}
+
+.lesson-container {
+    width: 75%;
+}
+
+.title-block {
+    width: 100%;
+    background: #D9D9D9;
+    opacity: 80%;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.video-player-wrapper {
+    position: relative;
+    padding-top: 56.25%; /* 16:9 aspect ratio (висота / ширина * 100%) */
+}
+
+.react-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.tasks-block {
+    width: 27rem !important;
+    min-height: 11rem !important;
+    background-color: #b6ecfc !important;
+    border-radius: 15px !important;
+}
+
+.task-block-btn {
+    width: 8rem;
+    height: 32px;
+    border-radius: 8px !important;
+    bottom: 0;
+}
+
+.task-block {
+    margin-top: 50px;
+    padding: 15px;
+    border-radius: 7px;
+}
+
+.p-status {
+    color: grey;
+    margin-bottom: 7px;
+}
+
+.div-try-again {
+    margin-top: 75px;
+    padding: 0 3px;
+    font-size: 14px;
+    color: #FAB005;
+    border: 2px solid #FAB005;
+    border-radius: 5px;
+}
+
+.span-try-again {
+    margin-left: -6px;
+    color: #FAB005;
+}
+
+.block-fixed {
+    position: fixed;
+    top: 97px;
+    right: 125px;
+}
+
+.task-progress {
+    width: 230px;
+    height: 220px;
+    background: #0ec6eb;
+    margin-top: 54px;
+    margin-left: 20px;
+    padding: 20px;
+    border-radius: 7px;
+}
+
+.box1 {
+    color: white;
+}
+
+.box3 {
+    margin-left: 5px;
+}
+
+.box4 {
+    margin-top: 20px;
+}
+
+.box6 {
+    margin-left: 5px;
+    color: white;
+    font-size: 11px;
+}
+
+span {
+    color: white;
+}
+
+.box1 > img, .box4 > img, .box5 > img, .box6 > img {
+    width: 35px;
+}
+
+@media (max-width: 996px) {
+    .task-progress {
+        width: 180px;
+        height: 180px;
+    }
+
+    .grid-wrapper {
+        padding-top: 14px;
+    }
+
+    .box1 > img, .box4 > img, .box5 > img, .box6 > img {
+        width: 30px;
+    }
+}
+
+@media (max-width: 1370px) {
+    .block-fixed {
+        right: 60px;
+    }
+}
+
+@media (max-width: 1299px) {
+    iframe {
+        width: 840px;
+        height: 580px;
+    }
+
+}
+
+@media (max-width: 1260px) {
+    iframe {
+        width: 636px;
+        height: 424px;
+    }
+
+}
+
+@media (max-width: 1170px) {
+    .tasks-block {
+        margin: 0 auto !important;
+    }
+
+    .task-progress {
+        width: 180px;
+        height: 170px;
+        padding: 5px;
+    }
+
+    .box4 {
+        margin-top: 5px;
+    }
+}
+
+@media (max-width: 930px) {
+
+    .lesson-container {
+        margin: 0 auto !important;
+    }
+
+    .row-block {
+        justify-content: center;
+    }
+
+    iframe {
+        width: 425px;
+        height: 254px;
+    }
+
+    .block-fixed {
+        position: static;
+        margin-top: 45px !important;
+    }
+
+    .task-progress {
+        margin: 0 auto !important;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .video-player-wrapper {
+        padding-top: 75%; /* Змінюємо висоту відносно вікна бравзера */
+    }
+}
+
+@media (max-width: 642px) {
+    iframe {
+        width: 390px;
+        height: 260px;
+    }
+}
+
+@media (max-width: 594px) {
+    iframe {
+        width: 360px;
+        height: 240px;
+    }
+}
+
+@media (max-width: 548px) {
+    iframe {
+        width: 345px;
+        height: 215px;
+    }
+}
+
+@media (max-width: 492px) {
+    iframe {
+        width: 330px;
+        height: 220px;
+    }
+}
+
+
+
+

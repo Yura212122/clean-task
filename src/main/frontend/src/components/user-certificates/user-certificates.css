@@ -1,0 +1,28 @@
+.icon-size {
+    width: 22px;
+    height: 22px;
+}
+
+@media (max-width: 767px) {
+
+    .icon-size {
+        width: 14px;
+        height: 14px;
+    }
+
+    .back-button {
+        font-size: 0.65rem;
+    }
+
+    .download-button {
+        font-size: 0.65rem;
+        margin: 0;
+    }
+}
+
+
+@media (max-width: 350px) {
+    .no-w-100.w-100 {
+        width: auto !important;
+    }
+}

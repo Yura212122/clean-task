@@ -1,0 +1,195 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-window {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    z-index: 1001;
+}
+
+.modal-window-btn-tests {
+    width: 180px;
+    height: 32px;
+    margin-right: 20px;
+    border-radius: 8px !important;
+    bottom: 20px;
+}
+
+.modal-window-btn-tests-again {
+    width: 180px;
+    height: 32px;
+    color: black;
+    border-radius: 8px !important;
+    bottom: 20px;
+}
+
+.green-color-msg {
+    color: green;
+}
+
+.red-color-msg {
+    color: red;
+}
+
+.arrow-back {
+    padding-right: 35px;
+}
+
+.test-container {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+.tests-name {
+    /*margin-left: 40px;*/
+    /*margin-bottom: 30px;*/
+}
+
+.options-list {
+    list-style-type: none;
+    margin-bottom: 20px;
+    padding: 0;
+}
+
+.option-item {
+    margin-bottom: 10px;
+    padding-left: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.option-item input[type="checkbox"] {
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+.option-item-green {
+    margin-bottom: 10px;
+    padding-left: 5px;
+    display: flex;
+    align-items: center;
+    color: green;
+}
+
+.option-item-green input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+.option-item-red {
+    margin-bottom: 10px;
+    padding-left: 5px;
+    display: flex;
+    align-items: center;
+    color: red;
+}
+
+.option-item-red input[type="radio"] {
+    margin-right: 8px;
+}
+
+.submit-btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: #0056b3;
+}
+
+.btn-test-submit {
+    margin-left: 40px;
+    width: 8rem;
+    height: 32px;
+    border-radius: 8px !important;
+}
+
+.success-button {
+    min-width: 200px;
+    background-color: #28a745;
+    color: #ffffff;
+    margin-right: 0;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.success-button:hover {
+    background-color: #218838;
+}
+
+.warning-button {
+    min-width: 200px;
+    background-color: #ffc107;
+    color: #ffffff;
+    margin-right: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.warning-button:hover {
+    background-color: #ffca2c;
+}
+
+.btn-yes:hover {
+    background-color: #0e9acf !important;
+    border-color: #0e9acf !important;
+}
+
+.btn-yes:active {
+    background-color: #0485b5 !important;
+    border-color: #0485b5 !important;
+}
+
+.btn-no:hover {
+    background-color: #edfaff !important;
+    border-color: #edfaff !important;
+}
+
+.btn-no:active {
+    background-color: #b2e4f7 !important;
+    border-color: #b2e4f7 !important;
+}
+
+@media (max-width: 415px) {
+    .btn-yes {
+        width: 160px !important;
+        font-size: 14px !important;
+    }
+
+    .btn-no {
+        width: 160px !important;
+        font-size: 14px !important;
+    }
+}
+
+@media (max-width: 376px) {
+    .btn-yes {
+        width: 140px !important;
+        font-size: 12px !important;
+    }
+
+    .btn-no {
+        width: 140px !important;
+        font-size: 12px !important;
+    }
+}

@@ -1,0 +1,22 @@
+.p-not-logged-in {
+    padding: 10px;
+    font-size: 35px;
+    font-weight: bold;
+    background-color: white;
+    border-radius: 20px;
+}
+
+.btn-not-logged-in {
+    padding: 10px;
+    font-size: 25px;
+    font-weight: bold;
+    background-color: white;
+    border-radius: 25px;
+    border-color: white;
+}
+
+.img-btn-not-logged-in {
+    width: 30px;
+    margin-right: 10px;
+    padding-bottom: 4px;
+}

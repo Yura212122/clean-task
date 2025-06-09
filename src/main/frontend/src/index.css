@@ -1,0 +1,25 @@
+@font-face {
+  font-family: 'Gilroy';
+  src: url('./fonts/Gilroy-Regular.woff2') format('woff2'),
+    url('./fonts/Gilroy-Regular.woff') format('woff'),
+    url('./fonts/Gilroy-Regular.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+body {
+  box-sizing: border-box !important;
+  font-family: 'Gilroy' !important;
+  margin: 0px !important;
+  padding: 0px !important;
+  color: #333333 !important;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+html, body {
+  overflow-y: auto;
+}

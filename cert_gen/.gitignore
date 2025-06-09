@@ -1,0 +1,9 @@
+*.sqlite3
+*.pdf
+*.DS_Store
+/credentials/*.json
+/certificate-generation-445610-55b8a4bc1d6e.json
+certs.zip
+temp_qr_code.png
+test.zip
+

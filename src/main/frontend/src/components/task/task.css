@@ -1,0 +1,97 @@
+.task-main {
+    width: 100%;
+    background-color: white;
+    padding: 30px;
+}
+
+.h4-desc {
+    width: 400px;
+    color: blue;
+    border: 1px solid blue;
+    border-radius: 5px;
+}
+
+.outer-container {
+    border-radius: 5px;
+    overflow: hidden;
+    border: 1px solid black;
+    max-width: 400px;
+    max-height: 200px;
+}
+
+.teacher-message {
+    max-width: 400px;
+    max-height: 200px;
+    overflow-wrap: break-word;
+    white-space: pre-wrap;
+    overflow-y: auto;
+    background-color: #f7f5f5;
+    padding: 10px;
+
+    text-align: left;
+}
+
+@media (max-width: 1210px) {
+    .img-block-size {
+        width: 650px !important;
+    }
+}
+
+@media (max-width: 1160px) {
+    .img-block-size {
+        width: 600px !important;
+    }
+}
+
+@media (max-width: 1110px) {
+    .img-block-size {
+        width: 550px !important;
+    }
+}
+
+@media (max-width: 1060px) {
+    .img-block-size {
+        width: 500px !important;
+    }
+}
+
+@media (max-width: 990px) {
+    .img-block-size {
+        width: 450px !important;
+    }
+}
+
+@media (max-width: 940px) {
+    .img-block-size {
+        width: 400px !important;
+    }
+}
+
+@media (max-width: 895px) {
+    .img-block-size {
+        width: 350px !important;
+    }
+}
+
+@media (max-width: 840px) {
+    .img-block-size {
+        width: 300px !important;
+    }
+}
+
+
+@media (max-width: 790px) {
+    .img-block {
+        display: none;
+    }
+}
+
+@media (max-width: 431px) {
+    .task-form {
+        margin-top: 20px;
+    }
+
+    .button-form {
+        padding-top: 20px;
+    }
+}

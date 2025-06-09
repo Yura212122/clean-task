@@ -1,0 +1,28 @@
+progress {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+/* value progress */
+progress::-moz-progress-bar {
+    background: #057649 !important;
+}
+
+progress::-webkit-progress-value {
+    background: #005989 !important;
+}
+
+progress {
+    color: #005989 !important;
+}
+
+/* background progress */
+progress::-webkit-progress-bar {
+    background-color: #F5F5F5 !important;
+    width: 100% !important;
+}
+
+progress {
+    background-color: #F5F5F5 !important;
+}

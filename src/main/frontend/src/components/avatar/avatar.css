@@ -1,0 +1,37 @@
+.telegram-block {
+    margin-right: 30px;
+}
+
+.figure-open-list-menu {
+    width: 88px;
+    height: 54px;
+}
+
+.ul-avatar-list-menu {
+    width: 112px;
+    border-radius: 8px;
+}
+
+.li-avatar-list-menu {
+    padding: 6px 16px;
+    font-size: 14px;
+}
+
+.avatar-item:hover {
+    background-color: #068BBE !important;
+    border-color: #068BBE !important;
+    color: #E1F5FA !important;
+}
+
+.arrow-rotate {
+    -ms-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+@media (max-width: 345px) {
+    .telegram-block {
+        margin-right: -60px !important;
+        z-index: 10;
+    }
+}

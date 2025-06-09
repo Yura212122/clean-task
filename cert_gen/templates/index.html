@@ -1,0 +1,289 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate Generator</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.1/css/all.css">
+    <link rel="shortcut icon" href="{% static 'favicon.ico' %}">
+    <style>
+        .tab-content {
+            padding: 20px 0;
+        }
+        .nav-tabs {
+            margin-bottom: 20px;
+        }
+        .date-input {
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <ul class="nav nav-tabs" id="certTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="graduation-tab" data-bs-toggle="tab" data-bs-target="#graduation" type="button" role="tab" aria-controls="graduation" aria-selected="true">Graduation Certificate</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="gift-tab" data-bs-toggle="tab" data-bs-target="#gift" type="button" role="tab" aria-controls="gift" aria-selected="false">Gift Certificate</button>
+        </li>
+    </ul>
+    
+    <div class="tab-content" id="certTabsContent">
+        <!-- Graduation Certificate Tab -->
+        <div class="tab-pane fade show active" id="graduation" role="tabpanel" aria-labelledby="graduation-tab">
+            <form id="input_form" method="POST">
+                {% csrf_token %}
+                <input id="name" type="text" placeholder="name">
+                <input id="course" type="text" placeholder="course">
+                <select name="selectedTemplate" class="select-button">
+                    <option value="template1">Template 1</option>
+                    <option value="template2">Template 2</option>
+                </select>
+                <button type="submit" id="save_btn" class="save-button" value="Generate">Generate</button>
+                <button type="submit" id="clear_btn" class="clear-button" value="Clear History">Clear History</button>
+            </form>
+            
+            <div id="indicator" style="display: none; 
+                                  margin: 20px; 
+                                  padding: 10px; 
+                                  color: white;
+                                  font-weight: bold;">
+                <i class="fas fa-spinner fa-spin"></i> Please wait, generating certificate...
+            </div>
+            
+            <div id="certificates">
+                {% for cert in certificates %}
+                    <div class="cert">{{ cert.name }}, {{ cert.course }}, {{ cert.created|date:"d.m.Y, H:i:s" }}
+                        <a href="{% url 'download_file' pk=cert.pk %}">Download file</a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        
+        <!-- Gift Certificate Tab -->
+        <div class="tab-pane fade" id="gift" role="tabpanel" aria-labelledby="gift-tab">
+            <form id="gift_form" method="POST">
+                {% csrf_token %}
+                <input id="gift_course" type="text" placeholder="Course name">
+                <input id="gift_expiry" type="date" class="date-input" placeholder="Expiry date">
+                <button type="submit" id="gift_save_btn" class="save-button" value="Generate">Generate Gift Certificate</button>
+                <button type="submit" id="gift_clear_btn" class="clear-button" value="Clear Gift History">Clear Gift History</button>
+            </form>
+            
+            <div id="gift_indicator" style="display: none; 
+                                      margin: 20px; 
+                                      padding: 10px; 
+                                      color: white;
+                                      font-weight: bold;">
+                <i class="fas fa-spinner fa-spin"></i> Please wait, generating gift certificate...
+            </div>
+            
+            <div id="gift_certificates">
+                {% for cert in gift_certificates %}
+                    <div class="cert">Course: {{ cert.course }}, Valid until: {{ cert.expiry_date|date:"d.m.Y" }}
+                        <a href="{% url 'download_gift_cert' pk=cert.pk %}">Download file</a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="{% static 'JS/index.js' %}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+
+    function reloadPage() {
+        location.reload();
+    }
+
+    // Existing certificate generation code
+    document.getElementById('save_btn').addEventListener('click', function(event) {
+        event.preventDefault();
+
+        const templateSelect = document.querySelector('.select-button');
+        const selectedTemplate = templateSelect.options[templateSelect.selectedIndex].value;
+        const name = document.getElementById('name').value.trim();
+        const course = document.getElementById('course').value.trim();
+        const csrftoken = getCookie('csrftoken');
+
+        if (!name || !course) {
+            alert('Please fill out both the name and course fields.');
+            return;
+        }
+
+        document.getElementById('indicator').style.display = 'block';
+
+        $.ajax({
+            url: 'generating_file',
+            type: 'POST',
+            data: JSON.stringify({
+                'template': selectedTemplate,
+                'name': name,
+                'course': course,
+            }),
+            contentType: 'application/json',
+            headers: {
+                'X-CSRFToken': csrftoken
+            },
+            success: function(response) {
+                console.log('Success:', response);
+                location.reload();
+            },
+            error: function(xhr, errmsg, err) {
+                console.log('Error:', errmsg);
+                alert('Error generating certificate. Please try again.');
+            },
+            complete: function() {
+                document.getElementById('indicator').style.display = 'none';
+            }
+        });
+    });
+
+    document.getElementById('clear_btn').addEventListener('click', function(event) {
+        event.preventDefault();
+        clearHistory();
+    });
+
+    function clearHistory() {
+        const csrftoken = getCookie('csrftoken');
+
+        fetch('clear_history', {
+            method: 'POST',
+            credentials: "same-origin",
+            headers: {
+                "X-Requested-With": "XMLHttpRequest",
+                "X-CSRFToken": csrftoken,
+                "Content-Type": "application/json"
+            }
+        })
+            .then(response => {
+                if (response.ok) {
+                    alert('History cleared successfully.');
+                    reloadPage()
+                } else {
+                    throw new Error('Error clearing history');
+                }
+            })
+            .catch(error => {
+                console.error(error);
+                alert('Error clearing history');
+            });
+    }
+
+    // New gift certificate generation code
+    document.getElementById('gift_save_btn').addEventListener('click', function(event) {
+        event.preventDefault();
+
+        const course = document.getElementById('gift_course').value.trim();
+        const expiryDate = document.getElementById('gift_expiry').value;
+        const csrftoken = getCookie('csrftoken');
+
+        if (!course || !expiryDate) {
+            alert('Please fill out all the fields for the gift certificate.');
+            return;
+        }
+
+        document.getElementById('gift_indicator').style.display = 'block';
+
+        $.ajax({
+            url: 'generate_gift_cert',
+            type: 'POST',
+            data: JSON.stringify({
+                'course': course,
+                'expiry_date': expiryDate
+            }),
+            contentType: 'application/json',
+            headers: {
+                'X-CSRFToken': csrftoken
+            },
+            success: function(response) {
+                console.log('Success:', response);
+                localStorage.setItem('activeTab', 'gift-tab');
+                location.reload();
+            },
+            error: function(xhr, errmsg, err) {
+                console.log('Error:', errmsg);
+                alert('Error generating gift certificate. Please try again.');
+            },
+            complete: function() {
+                document.getElementById('gift_indicator').style.display = 'none';
+            }
+        });
+    });
+
+    document.getElementById('gift_clear_btn').addEventListener('click', function(event) {
+        event.preventDefault();
+        clearGiftHistory();
+    });
+
+    function clearGiftHistory() {
+        const csrftoken = getCookie('csrftoken');
+
+        fetch('clear_gift_history', {
+            method: 'POST',
+            credentials: "same-origin",
+            headers: {
+                "X-Requested-With": "XMLHttpRequest",
+                "X-CSRFToken": csrftoken,
+                "Content-Type": "application/json"
+            }
+        })
+            .then(response => {
+                if (response.ok) {
+                    alert('Gift certificate history cleared successfully.');
+                    reloadPage()
+                } else {
+                    throw new Error('Error clearing gift certificate history');
+                }
+            })
+            .catch(error => {
+                console.error(error);
+                alert('Error clearing gift certificate history');
+            });
+    }
+
+    // Save active tab to localStorage when tab is switched
+    document.querySelectorAll('.nav-link').forEach(tab => {
+        tab.addEventListener('shown.bs.tab', function (event) {
+            localStorage.setItem('activeTab', event.target.id);
+        });
+    });
+    
+    // Restore active tab on page load
+    document.addEventListener('DOMContentLoaded', function() {
+        const activeTab = localStorage.getItem('activeTab');
+        if (activeTab) {
+            const tabToActivate = document.getElementById(activeTab);
+            if (tabToActivate) {
+                const tab = new bootstrap.Tab(tabToActivate);
+                tab.show();
+            }
+        }
+    });
+</script>
+</body>
+</html>
+
